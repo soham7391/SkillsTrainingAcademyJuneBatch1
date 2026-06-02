@@ -13,4 +13,12 @@ def test_health():
     response = client.get("/health")
 
     assert response.status_code == 200
-    assert response.json["status"] == "DOWN"
+    assert response.json["status"] == "UP"
+
+
+def test_userDetails():
+    client = app.test_client()
+    response = client.get("/userDetails")
+
+    assert response.status_code == 200
+    assert response.json["maritalStatus"] == "Married"

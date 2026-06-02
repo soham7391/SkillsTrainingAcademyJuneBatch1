@@ -10,5 +10,9 @@ def home():
 def health():
     return {"status": "UP"}
 
+@app.route("/userDetails")
+def userDetails():
+    return {"name" : "Ajit Gupta", "age" : 31, "maritalStatus" : "Married"}
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
